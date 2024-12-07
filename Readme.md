@@ -1,3 +1,15 @@
+
+# Task 1
+- make a index.html file
+- make a docker file for this index file
+	- base image will be nginx
+	- this index file should be served via nginx server
+-	make a kubernetes deployment file for that docker image
+-	expose the deployment via nodeport
+
+upload manifest files,dockerfile,src code to the github
+
+
 # Nginx-K8s-NodePort
 
 This project demonstrates deploying an Nginx server in a Kubernetes cluster. The server serves a simple static HTML page and is exposed to external traffic using a NodePort service. Docker Hub credentials are securely managed using Kubernetes secrets defined declaratively in `docker-registry-secret.yaml`.
