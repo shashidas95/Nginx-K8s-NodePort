@@ -15,12 +15,12 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: nginx
-        image: shashidas/nginx:1.1
-        ports:
-        - containerPort: 80
+        - name: nginx
+          image: shashidas/nginx:1.1
+          ports:
+            - containerPort: 80
       imagePullSecrets:
-      - name: docker-registry-secret
+        - name: docker-registry-secret
 ---
 apiVersion: v1
 kind: Service
@@ -31,7 +31,7 @@ spec:
   selector:
     app: nginx
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 80
-    nodePort: 30007 
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30007
