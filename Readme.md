@@ -307,7 +307,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 6. **License**: This is a placeholder for a license (adjust as necessary).
 
 ```
-#task 2 
+# Task 2 
 # FileSyncer Project
 
 **FileSyncer** is a Kubernetes deployment consisting of two containers that create files in a shared volume (`emptyDir`) every minute. The project demonstrates how to use Kubernetes volumes, containers, and cron jobs to create files in a synchronized manner.
