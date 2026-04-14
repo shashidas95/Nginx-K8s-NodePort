@@ -1,13 +1,31 @@
-# Task 1
+## 🚀 Task 1: Static Site Deployment with Nginx & Kubernetes
 
-- make a index.html file
-- make a docker file for this index file
-  - base image will be nginx
-  - this index file should be served via nginx server
-- make a kubernetes deployment file for that docker image
-- expose the deployment via nodeport
+This task demonstrates the end-to-end process of containerizing a static web page and orchestrating its deployment using Kubernetes.
 
-upload manifest files,dockerfile,src code to the github
+### **Core Objectives**
+* **Containerization**: Package a static HTML site into a lightweight Nginx container.
+* **Orchestration**: Deploy the containerized application to a Kubernetes cluster.
+- **Service Discovery**: Expose the application to external traffic using a **NodePort** service.
+
+### **Implementation Steps**
+
+#### **1. Source & Dockerization**
+* **`index.html`**: A simple entry point for the web server.
+* **`Dockerfile`**: 
+    * Uses `nginx:alpine` as the base image for minimal footprint.
+    * Copies the local `index.html` into the default Nginx HTML directory (`/usr/share/nginx/html`).
+
+#### **2. Kubernetes Manifests**
+* **Deployment**: Defines a replica set to ensure the Nginx pod is always running. It references the image hosted on Docker Hub.
+* **Service (NodePort)**: Maps the container's port 80 to a specific port on the Cluster Nodes (range 30000-32767), allowing external browser access.
+
+### **File Reference**
+The manifest files for this task can be found in the `/Task1-Nginx-serve-nodeport` directory:
+* `index.html` — Source code.
+* `Dockerfile` — Container configuration.
+* `k8s/deployment.yaml` — Kubernetes deployment and service definitions.
+
+---
 
 # Nginx-K8s-NodePort
 
@@ -186,7 +204,7 @@ kubectl delete -f docker-registry-secret.yaml
 
 ---
 
-# FileSyncer Project
+# Task 2: FileSyncer Project
 
 **FileSyncer** is a Kubernetes deployment consisting of two containers that create files in a shared volume (`emptyDir`) every minute. The project demonstrates how to use Kubernetes volumes, containers, and cron jobs to create files in a synchronized manner.
 
